@@ -5,3 +5,7 @@ function buttonPress(cardNum){
     firstCard = cardNum;
     console.log(firstCard)
 }
+
+function checkBtnClick(){
+    console.log("check button clicked")
+}
