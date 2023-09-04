@@ -1,7 +1,7 @@
-let firstCard = "";
-let secondCard = "";
+let firstCard = 0;
+let secondCard = 0;
 
 function buttonPress(cardNum){
-    console.log("button pressed")
-    console.log(cardNum)
+    firstCard = cardNum;
+    console.log(firstCard)
 }
