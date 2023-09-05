@@ -21,27 +21,32 @@ function buttonPress(cardNum){
 
 }
 
-function checkBtnClick(){
-    if (gameState == 2){
+function checkBtnClick() {
+    const correctVar = document.getElementById("correctElement"); // Get the DOM element
+    
+    if (gameState == 2) {
         console.log("Evaluating result");
 
-        if (firstCard == secondCard){
+        if (firstCard == secondCard) {
             alert("Correct!");
             gameState = 0;
             gameScore += 1;
+            console.log(gameScore);
         }
 
-        if (firstCard != secondCard){
+        if (firstCard != secondCard) {
             alert("Wrong!");
             gameState = 0;
             gameScore -= 1;
+            console.log(gameScore);
         }
-    }else if (gameState==1){
+
+        correctVar.textContent = gameScore; // Update the text content of the DOM element
+    } else if (gameState == 1) {
         alert("Select one more option");
-    }
-    else if (gameState==0){
+    } else if (gameState == 0) {
         alert("Select 2 options");
     }
-    
 }
+
 
