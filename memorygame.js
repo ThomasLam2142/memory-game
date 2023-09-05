@@ -5,7 +5,10 @@ let gameState = 0;
 let gameScore = 0;
 
 function buttonPress(cardNum){
-    
+    var tempName = 'button'+cardNum;
+    const btnOption = document.getElementById(tempName)
+    btnOption.disabled = true;
+
     if (gameState == 0){
         firstCard = cardNum;
         gameState = 1;
@@ -15,6 +18,12 @@ function buttonPress(cardNum){
         secondCard = cardNum;
         gameState = 2;
         console.log(secondCard);
+    }else{
+        alert("Selections made, Press Check Answer")
+    }
+
+    if (gameState == 2){
+        disableAllButtons()
     }
 
 
@@ -47,6 +56,15 @@ function checkBtnClick() {
     } else if (gameState == 0) {
         alert("Select 2 options");
     }
+}
+
+function disableAllButtons(){
+    for (let i = 1; i < 5; i++) {
+    var tempName = 'button'+i;
+    var btnOption = document.getElementById(tempName);
+    btnOption.disabled = true;
+    }
+    
 }
 
 
