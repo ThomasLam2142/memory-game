@@ -51,13 +51,19 @@ function checkBtnClick() {
         }
 
         correctVar.textContent = gameScore; // Update the text content of the DOM element
+
+        enableAllButtons()
+
     } else if (gameState == 1) {
         alert("Select one more option");
     } else if (gameState == 0) {
         alert("Select 2 options");
     }
+
+    
 }
 
+//This function will disable the buttons when the player has selected enough cards
 function disableAllButtons(){
     for (let i = 1; i < 5; i++) {
     var tempName = 'button'+i;
@@ -67,4 +73,13 @@ function disableAllButtons(){
     
 }
 
+//This function will enable the buttons when the player has evaluated their choices
+function enableAllButtons(){
+    for (let i = 1; i < 5; i++) {
+    var tempName = 'button'+i;
+    var btnOption = document.getElementById(tempName);
+    btnOption.disabled = false;
+    }
+    
+}
 
