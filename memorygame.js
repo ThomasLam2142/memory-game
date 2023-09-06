@@ -66,6 +66,11 @@ function checkBtnClick() {
         alert("Select 2 options");
     }
 
+
+    if (questionNum == 4){
+        alert("game over");
+    }
+
     
 }
 
@@ -111,6 +116,48 @@ function evaluateAnswer(){
         }
     }
 
+    if (questionNum == 2){
+        //1 == 1
+        //2 == 2
+        //3 == 1
+        //4 == 2
+        //Question 1 Answer Evaluation
+        if (firstCard == 1 || firstCard == 3){
+            firstCard =1;
+        }
+        if (secondCard == 1 || secondCard == 3){
+            secondCard =1;
+        }
+
+        if (firstCard == 2 || firstCard == 4){
+            firstCard =2;
+        }
+        if (secondCard == 2 || secondCard == 4){
+            secondCard =2;
+        }
+    }
+
+    if (questionNum == 3){
+        //1 == 1
+        //2 == 2
+        //3 == 2
+        //4 == 1
+        //Question 1 Answer Evaluation
+        if (firstCard == 1 || firstCard == 4){
+            firstCard =1;
+        }
+        if (secondCard == 1 || secondCard == 4){
+            secondCard =1;
+        }
+
+        if (firstCard == 2 || firstCard == 3){
+            firstCard =2;
+        }
+        if (secondCard == 2 || secondCard == 3){
+            secondCard =2;
+        }
+    }
+
     questionNum += 1;
 }
 
@@ -125,6 +172,13 @@ function updateCards(){
         card2Element.textContent = "Tomato";
         card3Element.textContent = "Avocado";
         card4Element.textContent = "Tomato";
+    }
+
+    if (questionNum == 3){
+        card1Element.textContent = "Hamburger";
+        card2Element.textContent = "Pizza";
+        card3Element.textContent = "Pizza";
+        card4Element.textContent = "Hamburger";
     }
 
 
