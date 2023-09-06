@@ -39,7 +39,8 @@ function checkBtnClick() {
     if (gameState == 2) {
         console.log("Evaluating result");
         enableAllButtons()//re-enable all of the buttons
-        evaluateAnswer()
+        evaluateAnswer();
+        updateCards();
 
         if (firstCard == secondCard) {
             alert("Correct!");
@@ -111,4 +112,20 @@ function evaluateAnswer(){
     }
 
     questionNum += 1;
+}
+
+function updateCards(){
+    var card1Element = document.getElementById("card1text");
+    var card2Element = document.getElementById("card2text");
+    var card3Element = document.getElementById("card3text");
+    var card4Element = document.getElementById("card4text");
+
+    if (questionNum == 2){
+        card1Element.textContent = "Avocado";
+        card2Element.textContent = "Tomato";
+        card3Element.textContent = "Avocado";
+        card4Element.textContent = "Tomato";
+    }
+
+
 }
