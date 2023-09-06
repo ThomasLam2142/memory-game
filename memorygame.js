@@ -6,6 +6,7 @@ let gameScore = 0;
 
 let questionNum = 1;
 
+
 function buttonPress(cardNum){
     var tempName = 'button'+cardNum;
     const btnOption = document.getElementById(tempName)
